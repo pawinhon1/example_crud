@@ -3,17 +3,15 @@ require('db.php');
 include("auth.php");
 $status = "";
 if(isset($_POST['new']) && $_POST['new']==1){
-    $trn_date = date("Y-m-d H:i:s");
-    $name =$_REQUEST['name'];
-    $age = $_REQUEST['age'];
-    $submittedby = $_SESSION["username"];
-    $ins_query="insert into people
-    (`trn_date`,`name`,`age`,`submittedby`)values
-    ('$trn_date','$name','$age','$submittedby')";
-    mysqli_query($con,$ins_query)
-    or die(mysql_error());
-    $status = "New Record Inserted Successfully.
-    </br></br><a href='view.php'>View Inserted Record</a>";
+$trn_date = date("Y-m-d H:i:s");
+$name =$_REQUEST['name'];
+$age = $_REQUEST['age'];
+$submittedby = $_SESSION["username"];
+$ins_query="insert into people (`trn_date`,`name`,`age`,`submittedby`) values ('$trn_date','$name','$age','$submittedby')";
+if(mysqli_query($con,$ins_query)){
+$status = "New Record Inserted Successfully.
+</br></br><a href='view.php'>View Inserted Record</a>";
+}
 }
 ?>
 <!DOCTYPE html>
@@ -21,7 +19,7 @@ if(isset($_POST['new']) && $_POST['new']==1){
 <head>
 <meta charset="utf-8">
 <title>Insert New Record</title>
-<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div class="form">
