@@ -15,6 +15,9 @@ include("auth.php");
 <p><a href="index.php">Home</a><p>
 <p><a href="insert.php">Insert New Record</a></p>
 <p><a href="view.php">View Records</a><p>
+<p><a href="add_product.php">เพิ่มสินค้า</a></p>
+<p><a href="view_products.php">สินค้า</a></p>
+<p><a href="view_purchase.php">รายการสั่งซื้อ</a></p>
 <p><a href="logout.php">Logout</a></p>
 </div>
 </body>
